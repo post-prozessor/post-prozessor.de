@@ -199,6 +199,7 @@ table.vor td { color: var(--grau); }
 .kontakt .karte { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 12px; padding: 24px; display: grid; gap: 6px; }
 .kontakt .karte .name { font-weight: 600; font-size: 1.1rem; }
 .kontakt .karte a { color: #fff; font-weight: 600; font-size: 1.1rem; overflow-wrap: anywhere; }
+.kontakt .karte a.pdf { font-size: 0.95rem; font-weight: 500; margin-top: 8px; }
 .kontakt .karte small { color: rgba(255, 255, 255, 0.75); }
 
 /* Fuß */
