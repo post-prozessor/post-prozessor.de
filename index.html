@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CAM-Export SCM – Postprozessor für PYTHA und SCM Maestro (XCS → PGMX)</title>
+<meta name="description" content="Postprozessor für den PYTHA CAM-Export: passt XCS-Dateien automatisch an SCM-Maschinen an und erzeugt mit dem XConverter von Maestro maschinenfertige PGMX-Programme. Mehrere Maschinen, MaestroLab, Windows 10 ab 1607.">
+<link rel="canonical" href="https://post-prozessor.de/">
+<link rel="icon" href="img/logo_192.png" type="image/png">
+<link rel="stylesheet" href="style.css">
+<meta name="theme-color" content="#0370BF">
+<meta property="og:title" content="CAM-Export SCM – Postprozessor für PYTHA und SCM Maestro (XCS → PGMX)">
+<meta property="og:description" content="Postprozessor für den PYTHA CAM-Export: passt XCS-Dateien automatisch an SCM-Maschinen an und erzeugt mit dem XConverter von Maestro maschinenfertige PGMX-Programme. Mehrere Maschinen, MaestroLab, Windows 10 ab 1607.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://post-prozessor.de/">
+<meta property="og:image" content="https://post-prozessor.de/img/e_funktionen.webp">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "CAM-Export SCM", "applicationCategory": "BusinessApplication", "operatingSystem": "Windows 10 (ab 1607), Windows 11", "description": "Postprozessor für den PYTHA CAM-Export nach SCM Maestro: XCS-Dateien anpassen und mit dem XConverter in PGMX umwandeln.", "url": "https://post-prozessor.de/", "author": {"@type": "Organization", "name": "Theo Weber – Planung, Montage, CAD/CNC"}, "inLanguage": "de"}</script>
+</head>
+<body>
+<header class="kopf">
+  <div class="huelle">
+    <a class="marke" href="#start" aria-label="CAM-Export SCM – zur Startseite">
+      <img src="img/logo_192.png" alt="" width="38" height="38">
+      <div><b>CAM-Export SCM</b><span>Postprozessor PYTHA → SCM Maestro</span></div>
+    </a>
+    <nav class="navi" aria-label="Hauptnavigation">
+      <a href="#funktionen">Funktionen</a>
+      <a href="#maschinen">Mehrere Maschinen</a>
+      <a href="#einfuehrung">Einführung</a>
+      <a href="#fragen">Fragen</a>
+      <a class="knopf" href="#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<main id="start">
+  <section class="hero">
+    <div class="huelle">
+      <div>
+        <div class="eyebrow">Postprozessor für PYTHA und SCM Maestro</div>
+        <h1>Aus dem PYTHA CAM-Export direkt maschinenfertige PGMX-Programme</h1>
+        <p class="lead">CAM-Export SCM passt die XCS-Dateien aus PYTHA automatisch an Ihre SCM-Maschinen an und
+          wandelt sie mit dem XConverter von Maestro in einem Durchgang in PGMX um. Sie exportieren wie gewohnt –
+          Bohrtiefen, An- und Abfahren, Arbeitsfelder, Parkposition und Bearbeitungsnamen stimmen danach.</p>
+        <div class="aktionen">
+          <a class="knopf" href="#kontakt">Vorführung anfragen</a>
+          <a class="knopf zweit" href="#funktionen">Alle Funktionen</a>
+        </div>
+        <div class="fakten">
+          <span>SCM Maestro und MaestroLab</span>
+          <span>Mehrere Maschinen</span>
+          <span>Einstellungen ohne Programmieren</span>
+          <span>Windows 10 ab 1607 und Windows 11</span>
+        </div>
+      </div>
+
+      <figure class="bild hero-bild">
+        <img src="img/e_funktionen.webp" width="1800" height="1251"
+             alt="Einstellungsfenster von CAM-Export SCM, Seite Funktionen mit Schaltern je Maschine">
+      </figure>
+    </div>
+  </section>
+
+  <section class="ablauf" aria-label="Ablauf">
+    <div class="huelle">
+      <ol class="kette">
+        <li><div class="nr">01</div><div class="was">PYTHA</div><div class="wie">CAM-Export wie gewohnt, eine XCS-Datei je Bauteil und Seite</div></li>
+        <li><div class="nr">02</div><div class="was">Maschine wählen</div><div class="wie">Erst- und Zweitseite auf derselben oder verschiedenen Maschinen</div></li>
+        <li class="hier"><div class="nr">03</div><div class="was">CAM-Export SCM</div><div class="wie">bearbeitet jede XCS nach Ihren Einstellungen</div></li>
+        <li><div class="nr">04</div><div class="was">XConverter</div><div class="wie">Maestro wandelt um, auf Wunsch mit Saugern und Optimierung</div></li>
+        <li><div class="nr">05</div><div class="was">PGMX</div><div class="wie">Ergebnisfenster zeigt je Datei, ob alles geklappt hat</div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="abschnitt" id="funktionen">
+    <div class="huelle">
+      <div class="kopfzeile">
+        <div class="mass">Funktionen</div>
+        <h2>Was PYTHA nicht so ausgibt, wie Ihre Maschine es braucht</h2>
+        <p>Jede Funktion lässt sich einzeln ein- und ausschalten – im Maschinenmodus für jede Maschine getrennt. Die
+          Werte stellen Sie in einem übersichtlichen Einstellungsfenster ein.</p>
+      </div>
+      <div class="gruppen">
+        <article class="gruppe">
+          <h3>Bohren <small>4 Funktionen</small></h3>
+          <ul>
+            <li><b>Aufmaß Durchgangsbohrung</b><span>Durchgangsbohrungen um einen Durchbohrwert tiefer, z. B. 19 mm Platte → 20,5 mm, für einen sauberen Austritt.</span></li>
+            <li><b>Bohrungen an Plattendicke anpassen</b><span>Bohrungen sitzen auch dann richtig, wenn an der Maschine eine andere Plattendicke eingegeben wird.</span></li>
+            <li><b>Geschwindigkeitsprofil je Durchmesser und Material</b><span>Vertikal- und Horizontalbohrungen bekommen ein Maestro-Geschwindigkeitsprofil, z. B. „Topfband“ für Ø 35 – auf Wunsch nur für bestimmte Materialien.</span></li>
+            <li><b>Entspanzyklus</b><span>Tiefe Bohrungen in mehreren Stufen, damit Späne abgeführt werden und der Bohrer nicht überhitzt – je Material einstellbar.</span></li>
+          </ul>
+        </article>
+        <article class="gruppe">
+          <h3>Fräsen und Sägen <small>5 Funktionen</small></h3>
+          <ul>
+            <li><b>Bauteilformatierung</b><span>An- und Abfahren im Bogen oder gerade, Überlappung am Konturende.</span></li>
+            <li><b>Sägeschnitte</b><span>An- und Abfahren, Extratiefe und Vorritzen gegen Ausrisse.</span></li>
+            <li><b>Taschenfräsung</b><span>Ausräumstrategie, Zustellung je Arbeitsgang – und eine zweite Strategie für bestimmte Fräser.</span></li>
+            <li><b>Absaughaube</b><span>Korrigiert die Haubenposition bei automatisch erzeugten Fräsungen.</span></li>
+            <li><b>Nutfräser und Spindel</b><span>Nuten mit dem Nutfräser bekommen fest die richtige Spindel – wichtig bei älteren Maschinen.</span></li>
+          </ul>
+        </article>
+        <article class="gruppe">
+          <h3>Maschine und Arbeitsfeld <small>5 Funktionen</small></h3>
+          <ul>
+            <li><b>Arbeitsfeld nach Bauteilname oder Größe</b><span>Linke Seiten links, rechte rechts – oder nach Länge und Breite, mit Schwellenwert für lange Teile.</span></li>
+            <li><b>Programmende mit Park-Makro</b><span>Kurze Teile: Wegfahrschritt neben das Bauteil. Lange Teile: Parkposition, die die Maschine sicher erreicht.</span></li>
+            <li><b>Zweitseitenbearbeitung</b><span>Rohteilübermaß und Offset auf der Zweitseite automatisch auf null.</span></li>
+            <li><b>Spannung und mechanische Optionen</b><span>Werte je Maschine, z. B. für das Nesting.</span></li>
+            <li><b>Rohteildefinition entfernen</b><span>Für Nesting oder die Weiterverarbeitung der PGMX in anderen Programmen.</span></li>
+          </ul>
+        </article>
+        <article class="gruppe">
+          <h3>Aus dem Dateinamen <small>3 Funktionen</small></h3>
+          <ul>
+            <li><b>Material-Offset und Startmakro</b><span>Materialgruppe im Namen (z. B. COR) → passender Zuschlag und eigenes Startmakro.</span></li>
+            <li><b>Technologie</b><span>Kürzel im Namen (z. B. T01) → Maestro-Technologie wie „Fase oben 1 mm“ wird angewendet.</span></li>
+            <li><b>Makrotiefe</b><span>Ein Wert aus PYTHA wird an Ihre eigenen Maestro-Makros übergeben.</span></li>
+          </ul>
+        </article>
+        <article class="gruppe">
+          <h3>An der Maschine <small>2 Funktionen</small></h3>
+          <ul>
+            <li><b>Bearbeitungsnamen auf Deutsch</b><span>VerticalDrilling_4 wird zu Vertikalbohrung_4 – der Bediener sieht sofort, was passiert.</span></li>
+            <li><b>Fehlerprotokoll in der Datei</b><span>Meldet Maestro einen Fehler, steht er als Kommentar direkt oben in der XCS.</span></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="abschnitt weiss" id="maschinen">
+    <div class="huelle zweispaltig">
+      <div class="text">
+        <div class="mass">Mehrere Maschinen</div>
+        <h2>Erstseite auf dem Bearbeitungszentrum, Zweitseite auf dem Nesting</h2>
+        <p>Im Maschinenmodus legen Sie jede Maschine mit ihrer Maestro-Maschinenumgebung an. Beim Export wählen Sie
+          mit einem Klick, wo die Erst- und wo die Zweitseiten bearbeitet werden. Jede Maschine hat ihre eigenen
+          Funktionsschalter und ihre eigene Art der Umwandlung.</p>
+        <ul class="punkte">
+          <li>Beliebig viele Maschinen: Vertikal-CNC, Nesting, Konsole</li>
+          <li>Saugerplatzierung und Optimierung durch Maestro je Maschine</li>
+          <li>Maestro oder MaestroLab – umschaltbar, die Pfade ziehen mit</li>
+        </ul>
+      </div>
+      <figure class="bild">
+        <img src="img/t_verarbeitung.webp" width="1096" height="650" loading="lazy"
+             alt="Verarbeitungsfenster von CAM-Export SCM während die CNC-Programme erstellt werden">
+        <figcaption>Während des Exports: die CNC-Programme werden erstellt</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="abschnitt" id="sicherheit">
+    <div class="huelle zweispaltig umgekehrt">
+      <div class="text">
+        <div class="mass">Sicher umwandeln</div>
+        <h2>Eine fehlerhafte Datei hält den Auftrag nicht auf</h2>
+        <p>Alle Dateien gehen in einem Durchgang an den XConverter. Scheitert eine Datei, sucht CAM-Export SCM sie
+          gezielt heraus – alle anderen Programme entstehen trotzdem.</p>
+        <ul class="punkte">
+          <li>Ergebnisfenster mit Status je Datei und der Meldung von Maestro</li>
+          <li>Gegenprobe mit der unbearbeiteten PYTHA-Datei zeigt, wo die Ursache liegt</li>
+          <li>Schutz gegen doppeltes Bearbeiten, wenn nur neu umgewandelt wird</li>
+          <li>Hinweis, wenn der Maestro-Dongle fehlt</li>
+        </ul>
+      </div>
+      <figure class="bild"><img src="img/d_ergebnis_fehler.webp" width="1100" height="894" loading="lazy" alt="Ergebnisfenster: 9 von 10 CNC-Programmen erstellt, eine Datei mit Fehler und Meldung von Maestro"><figcaption>Ergebnisfenster: eine Datei mit Fehler, alle anderen erstellt</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="abschnitt weiss" id="einstellungen">
+    <div class="huelle">
+      <div class="kopfzeile">
+        <div class="mass">Einstellungen</div>
+        <h2>Alles in einem Fenster – ohne Skripte und ohne Programmieren</h2>
+        <p>Jede Funktion ist erklärt, Abhängigkeiten werden angezeigt, vor jedem Speichern entsteht eine Sicherung.
+          Ein ausführliches Benutzerhandbuch liegt bei.</p>
+        <ul class="punkte">
+          <li>Einstellungen auf einen zweiten Rechner übertragen – mit einer Datei, die Werte des Zielrechners bleiben erhalten</li>
+          <li>Wer schon den bisherigen PowerShell-Postprozessor nutzt: Die alten Einstellungen werden beim ersten Start übernommen</li>
+        </ul>
+      </div>
+      <figure class="bild">
+        <img src="img/e_allgemein.webp" width="1800" height="1251" loading="lazy"
+             alt="Einstellungsfenster, Globale Einstellungen mit Maestro-Version und Programmpfaden">
+        <figcaption>Einstellungen, Globale Einstellungen: Maestro oder MaestroLab, Pfade, Dateiname</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="abschnitt" id="einfuehrung">
+    <div class="huelle">
+      <div class="kopfzeile">
+        <div class="mass">Einführung</div>
+        <h2>So kommt CAM-Export SCM in Ihre Werkstatt</h2>
+      </div>
+      <ol class="schritte">
+        <li><h3>Gespräch</h3><p>Sie zeigen mir Ihre Maschinen, Ihre PYTHA-Vorlagen und was bisher von Hand nachgearbeitet wird.</p></li>
+        <li><h3>Installation</h3><p>Setup ausführen – ohne Administratorrechte. Die Anbindung an PYTHA richtet sich selbst ein.</p></li>
+        <li><h3>Einrichtung</h3><p>Maschinen, Funktionen und Werte stellen wir gemeinsam ein, auf Wunsch per Fernwartung.</p></li>
+        <li><h3>Probeexport</h3><p>Ein paar typische Bauteile exportieren und in Maestro prüfen – dann läuft der Alltag.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="abschnitt weiss" id="voraussetzungen">
+    <div class="huelle">
+      <div class="kopfzeile">
+        <div class="mass">Voraussetzungen</div>
+        <h2>Was Sie brauchen</h2>
+      </div>
+      <div class="tabelle-wrap">
+        <table class="vor">
+          <tr><th>Windows</th><td>Windows 10 ab Version 1607 (auch Enterprise LTSB 2016, wie auf vielen Maschinen-PCs) oder Windows 11, jeweils 64 Bit. Das Setup wählt die passende Programmvariante selbst; Administratorrechte sind nicht nötig.</td></tr>
+          <tr><th>PYTHA</th><td>mit CAM-Export für SCM Maestro (Modul „Werkstatt“). Mehrere PYTHA-Versionen nebeneinander sind kein Problem.</td></tr>
+          <tr><th>SCM Maestro oder MaestroLab</th><td>mit XConverter und gültiger Maestro-Lizenz (Dongle)</td></tr>
+          <tr><th>Lizenz</th><td>eine Lizenz je Rechner</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="abschnitt" id="fragen">
+    <div class="huelle">
+      <div class="kopfzeile">
+        <div class="mass">Fragen</div>
+        <h2>Häufige Fragen</h2>
+      </div>
+      <div class="fragen">
+        <details>
+          <summary>Muss ich in PYTHA etwas anders machen?</summary>
+          <p>Nein. Sie exportieren wie gewohnt. CAM-Export SCM klinkt sich in den CAM-Export ein und startet automatisch.
+            Nur wenn Werte aus dem Dateinamen genutzt werden sollen (z. B. Materialgruppe oder Technologie), muss die
+            Namensvorlage in PYTHA dazu passen.</p>
+        </details>
+        <details>
+          <summary>Funktioniert es mit MaestroLab?</summary>
+          <p>Ja. Sie wählen in den Einstellungen, ob Maestro oder MaestroLab verwendet wird. Bei zwei Maschinen mit
+            Saugerplatzierung wird MaestroLab empfohlen.</p>
+        </details>
+        <details>
+          <summary>Was passiert, wenn eine Datei nicht umgewandelt werden kann?</summary>
+          <p>Alle anderen Programme entstehen trotzdem. Das Ergebnisfenster zeigt die Meldung von Maestro, und eine
+            Gegenprobe mit der unbearbeiteten Datei zeigt, ob die Ursache in PYTHA oder in der Bearbeitung liegt.</p>
+        </details>
+        <details>
+          <summary>Läuft das auch auf dem älteren Rechner an der Maschine?</summary>
+          <p>Ja. CAM-Export SCM läuft ab Windows 10 Version 1607 – auch auf Maschinen-PCs, die nicht aktualisiert
+            werden dürfen. Das Setup erkennt die Windows-Version und installiert die passende Programmvariante.
+            Bedienung und Ergebnisse sind gleich.</p>
+        </details>
+        <details>
+          <summary>Kann ich auf eine neue PYTHA-Version umsteigen?</summary>
+          <p>Ja. Die Einstellungen sind unabhängig von der PYTHA-Version. Beim nächsten Öffnen der Einstellungen fragt
+            das Programm, ob die neue Version angebunden werden soll.</p>
+        </details>
+        <details>
+          <summary>Lässt sich der Postprozessor an meine Werkstatt anpassen?</summary>
+          <p>Ja. Die vorhandenen Funktionen decken die häufigsten Anpassungen ab. Fehlt etwas, sprechen Sie mich an –
+            neue Funktionen lassen sich ergänzen.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="kontakt" id="kontakt">
+    <div class="huelle">
+      <div>
+        <h2>Interesse an einer Vorführung?</h2>
+        <p>Schreiben Sie mir, mit welchen Maschinen Sie arbeiten und was Sie heute nach dem PYTHA-Export noch von Hand
+          ändern. Ich melde mich mit einem Terminvorschlag.</p>
+      </div>
+      <div class="karte">
+        <span class="name">Theo Weber</span>
+        <small>Planung, Montage, CAD/CNC</small>
+        <a class="mail" data-u="kontakt" data-d="post-prozessor.de" href="#kontakt">kontakt [at] post-prozessor.de</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<footer class="fuss">
+  <div class="huelle">
+    <div class="zeile">
+      <span>© 2026 Theo Weber · CAM-Export SCM</span>
+      <nav aria-label="Rechtliches"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></nav>
+    </div>
+    <p class="marken">PYTHA ist eine Marke der PYTHA Lab GmbH. SCM und Maestro sind Marken der SCM Group S.p.A.
+      CAM-Export SCM ist ein eigenständiges Produkt von Theo Weber und steht in keiner geschäftlichen Verbindung zu
+      diesen Unternehmen.</p>
+  </div>
+</footer>
+<script>for(const a of document.querySelectorAll("a.mail")){const m=a.dataset.u+"@"+a.dataset.d;a.href="mailto:"+m;a.textContent=m;}</script>
+</body>
+</html>

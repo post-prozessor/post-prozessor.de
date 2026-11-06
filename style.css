@@ -1,0 +1,220 @@
+@font-face { font-family: "IBM Plex Sans"; font-weight: 400; font-style: normal; font-display: swap; src: url("fonts/IBMPlexSans-Regular.woff2") format("woff2"); }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 500; font-style: normal; font-display: swap; src: url("fonts/IBMPlexSans-Medium.woff2") format("woff2"); }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 600; font-style: normal; font-display: swap; src: url("fonts/IBMPlexSans-SemiBold.woff2") format("woff2"); }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 700; font-style: normal; font-display: swap; src: url("fonts/IBMPlexSans-Bold.woff2") format("woff2"); }
+@font-face { font-family: "IBM Plex Mono"; font-weight: 400; font-style: normal; font-display: swap; src: url("fonts/IBMPlexMono-Regular.woff2") format("woff2"); }
+/* Layout: technisches Zeichenblatt – Raster nur im Kopf, sonst ruhige Flächen; Maßlinie als einziges Ornament. */
+:root {
+  --papier: #F4F7FA;
+  --flaeche: #FFFFFF;
+  --tinte: #142131;
+  --grau: #566273;
+  --linie: #D4DDE8;
+  --raster: rgba(3, 112, 191, 0.07);
+  --blau: #0370BF;
+  --blau-tief: #025A9A;
+  --blau-hell: #E6F0FA;
+  --neu: #0B7A4B;
+  --neu-hell: #E5F4EC;
+  --code-bg: #0F1C2B;
+  --code-fg: #D8E3EF;
+  --code-grau: #7F91A6;
+  --schrift: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --schrift-mono: "IBM Plex Mono", Consolas, "Courier New", monospace;
+  --breite: 1120px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --papier: #0E1620; --flaeche: #152130; --tinte: #E6EDF5; --grau: #9AA8B9; --linie: #263548;
+    --raster: rgba(94, 170, 230, 0.08); --blau: #4AA3E8; --blau-tief: #7CBDF0; --blau-hell: #16304A;
+    --neu: #5CC994; --neu-hell: #143326; --code-bg: #08111B; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --papier: #0E1620; --flaeche: #152130; --tinte: #E6EDF5; --grau: #9AA8B9; --linie: #263548;
+  --raster: rgba(94, 170, 230, 0.08); --blau: #4AA3E8; --blau-tief: #7CBDF0; --blau-hell: #16304A;
+  --neu: #5CC994; --neu-hell: #143326; --code-bg: #08111B; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0; background: var(--papier); color: var(--tinte);
+  font-family: var(--schrift); font-size: 17px; line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--blau); text-underline-offset: 3px; }
+a:hover { color: var(--blau-tief); }
+:focus-visible { outline: 3px solid var(--blau); outline-offset: 3px; border-radius: 4px; }
+code, .mono { font-family: var(--schrift-mono); font-size: 0.9em; }
+h1, h2, h3 { line-height: 1.2; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(2rem, 4.6vw, 3.25rem); font-weight: 700; letter-spacing: -0.015em; }
+h2 { font-size: clamp(1.55rem, 3vw, 2.2rem); font-weight: 700; letter-spacing: -0.01em; }
+h3 { font-size: 1.12rem; font-weight: 600; }
+p { margin: 0; }
+
+.huelle { max-width: var(--breite); margin: 0 auto; padding-inline: 20px; }
+.eyebrow {
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blau);
+}
+
+/* ---------------------------------------------------------------- Kopf */
+.kopf {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10;
+  background: color-mix(in srgb, var(--papier) 88%, transparent);
+  backdrop-filter: blur(10px); border-bottom: 1px solid var(--linie);
+}
+.kopf .huelle { display: flex; align-items: center; gap: 24px; padding-block: 12px; }
+.marke { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--tinte); }
+.marke img { width: 38px; height: 38px; }
+.marke b { font-size: 1.05rem; letter-spacing: -0.01em; }
+.marke span { display: block; font-size: 0.75rem; color: var(--grau); line-height: 1.2; }
+.navi { margin-left: auto; display: flex; gap: 22px; font-size: 0.94rem; }
+.navi a { color: var(--tinte); text-decoration: none; }
+.navi a:hover { color: var(--blau); }
+.navi .knopf { padding: 7px 16px; font-size: 0.92rem; }
+@media (max-width: 860px) { .navi a:not(.knopf) { display: none; } }
+
+.knopf {
+  display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 8px;
+  background: var(--blau); color: #fff !important; text-decoration: none; font-weight: 600;
+  border: 1px solid var(--blau); transition: background 0.15s;
+}
+.knopf:hover { background: var(--blau-tief); border-color: var(--blau-tief); }
+.knopf.zweit { background: transparent; color: var(--blau) !important; }
+.knopf.zweit:hover { background: var(--blau-hell); }
+
+/* ---------------------------------------------------------------- Hero mit Zeichenraster */
+.hero {
+  border-bottom: 1px solid var(--linie);
+  background-image:
+    linear-gradient(var(--raster) 1px, transparent 1px),
+    linear-gradient(90deg, var(--raster) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.hero .huelle {
+  display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 48px; align-items: center;
+  padding-block: 72px 64px;
+}
+@media (max-width: 900px) { .hero .huelle { grid-template-columns: minmax(0, 1fr); padding-block: 44px; gap: 36px; } }
+.hero h1 { margin-top: 14px; }
+.hero .lead { margin-top: 20px; font-size: 1.15rem; color: var(--grau); max-width: 34em; }
+.hero .aktionen { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 12px; }
+.hero .fakten { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 0.9rem; color: var(--grau); }
+.hero .fakten span::before { content: "✓"; color: var(--neu); font-weight: 700; margin-right: 6px; }
+
+/* ---------------------------------------------------------------- Ablauf PYTHA → PGMX */
+.ablauf { background: var(--flaeche); border-bottom: 1px solid var(--linie); }
+.ablauf .huelle { padding-block: 36px; }
+.kette { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0; }
+.kette li { position: relative; padding: 4px 18px 4px 0; }
+.kette li + li { padding-left: 18px; border-left: 1px dashed var(--linie); }
+.kette .was { font-weight: 600; }
+.kette .wie { font-size: 0.86rem; color: var(--grau); line-height: 1.45; margin-top: 2px; }
+.kette .hier .was { color: var(--blau); }
+.kette .nr { font-family: var(--schrift-mono); font-size: 0.74rem; color: var(--grau); }
+@media (max-width: 860px) {
+  .kette { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .kette li + li { border-left: 0; padding-left: 0; border-top: 1px dashed var(--linie); padding-top: 14px; }
+}
+
+/* ---------------------------------------------------------------- Abschnitte */
+.abschnitt { padding-block: 80px; }
+.abschnitt.weiss { background: var(--flaeche); border-block: 1px solid var(--linie); }
+.abschnitt .kopfzeile { max-width: 46em; display: grid; gap: 12px; margin-bottom: 40px; }
+.abschnitt .kopfzeile p { color: var(--grau); font-size: 1.05rem; }
+@media (max-width: 700px) { .abschnitt { padding-block: 56px; } }
+
+/* Maßlinie unter Abschnittstiteln */
+.mass { display: flex; align-items: center; gap: 10px; color: var(--grau); font-family: var(--schrift-mono); font-size: 0.72rem; }
+.mass::before, .mass::after { content: ""; height: 1px; background: currentColor; opacity: 0.5; }
+.mass::before { width: 28px; }
+.mass::after { flex: 1; max-width: 120px; }
+
+/* Funktionsgruppen */
+.gruppen { columns: 3 300px; column-gap: 20px; }
+.gruppe { background: var(--flaeche); border: 1px solid var(--linie); border-radius: 12px; padding: 24px; min-width: 0;
+  break-inside: avoid; margin-bottom: 20px; display: block; }
+.abschnitt.weiss .gruppe { background: var(--papier); }
+.gruppe h3 { display: flex; align-items: baseline; gap: 10px; }
+.gruppe h3 small { font-family: var(--schrift-mono); font-size: 0.72rem; color: var(--grau); font-weight: 400; }
+.gruppe ul { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 12px; }
+.gruppe li { display: grid; gap: 1px; }
+.gruppe li b { font-weight: 600; font-size: 0.98rem; }
+.gruppe li span { color: var(--grau); font-size: 0.92rem; line-height: 1.5; }
+
+/* Bild + Text */
+.zweispaltig { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 56px; align-items: center; }
+.zweispaltig.umgekehrt { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); }
+.zweispaltig.umgekehrt .text { order: 2; }
+@media (max-width: 900px) {
+  .zweispaltig, .zweispaltig.umgekehrt { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .zweispaltig.umgekehrt .text { order: 0; }
+}
+.text { display: grid; gap: 16px; min-width: 0; }
+.text p { color: var(--grau); }
+.punkte { margin: 4px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.punkte li { padding-left: 26px; position: relative; }
+.punkte li::before {
+  content: ""; position: absolute; left: 2px; top: 0.62em; width: 12px; height: 2px; background: var(--blau);
+}
+.bild { margin: 0; min-width: 0; }
+.bild img { border-radius: 10px; border: 1px solid var(--linie); box-shadow: 0 18px 40px -26px rgba(10, 30, 60, 0.4); background: var(--flaeche); }
+.bild figcaption { margin-top: 10px; font-size: 0.84rem; color: var(--grau); }
+.bilder2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 560px) { .bilder2 { grid-template-columns: minmax(0, 1fr); } }
+
+/* Schritte */
+.schritte { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; counter-reset: s; }
+.schritte li { counter-increment: s; border-top: 2px solid var(--blau); padding-top: 16px; display: grid; gap: 6px; align-content: start; }
+.schritte li::before { content: "Schritt " counter(s); font-family: var(--schrift-mono); font-size: 0.74rem; color: var(--blau); }
+.schritte li p { color: var(--grau); font-size: 0.94rem; }
+@media (max-width: 900px) { .schritte { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .schritte { grid-template-columns: minmax(0, 1fr); } }
+
+/* Voraussetzungen */
+.tabelle-wrap { overflow-x: auto; }
+table.vor { width: 100%; border-collapse: collapse; font-size: 0.96rem; }
+table.vor th, table.vor td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--linie); vertical-align: top; }
+table.vor th { width: 30%; font-weight: 600; }
+table.vor td { color: var(--grau); }
+
+/* Fragen */
+.fragen { display: grid; gap: 10px; max-width: 52em; }
+.fragen details { background: var(--flaeche); border: 1px solid var(--linie); border-radius: 10px; padding: 0 20px; }
+.fragen summary { cursor: pointer; padding: 16px 0; font-weight: 600; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+.fragen summary::-webkit-details-marker { display: none; }
+.fragen summary::after { content: "+"; color: var(--blau); font-size: 1.3rem; line-height: 1; }
+.fragen details[open] summary::after { content: "–"; }
+.fragen details p { padding-bottom: 18px; color: var(--grau); }
+
+/* Kontakt */
+.kontakt { background: var(--blau); color: #fff; }
+.kontakt .huelle { padding-block: 64px; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 40px; align-items: center; }
+@media (max-width: 860px) { .kontakt .huelle { grid-template-columns: minmax(0, 1fr); } }
+.kontakt h2 { color: #fff; }
+.kontakt p { color: rgba(255, 255, 255, 0.86); margin-top: 12px; max-width: 34em; }
+.kontakt .karte { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 12px; padding: 24px; display: grid; gap: 6px; }
+.kontakt .karte .name { font-weight: 600; font-size: 1.1rem; }
+.kontakt .karte a { color: #fff; font-weight: 600; font-size: 1.1rem; overflow-wrap: anywhere; }
+.kontakt .karte small { color: rgba(255, 255, 255, 0.75); }
+
+/* Fuß */
+.fuss { padding-block: 36px; font-size: 0.86rem; color: var(--grau); }
+.fuss .huelle { display: grid; gap: 14px; }
+.fuss .zeile { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+.fuss nav { display: flex; gap: 20px; }
+.fuss .marken { font-size: 0.78rem; max-width: 60em; }
+
+/* Rechtsseiten */
+.recht { max-width: 46em; padding-block: 56px 80px; }
+.recht h1 { font-size: 2rem; margin-bottom: 24px; }
+.recht h2 { font-size: 1.25rem; margin: 32px 0 10px; }
+.recht p, .recht li { color: var(--grau); }
+.recht p + p { margin-top: 10px; }
+.platzhalter { background: #FFF3C4; color: #5B4300; padding: 0 4px; border-radius: 3px; }
+
+.hero-bild img { box-shadow: 0 24px 60px -28px rgba(10, 30, 60, 0.5); }
+
